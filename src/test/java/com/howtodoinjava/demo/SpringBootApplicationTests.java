@@ -13,5 +13,13 @@ public class SpringBootApplicationTests {
 	{	
 		Assert.assertTrue("397.643.358-61".contentEquals(com.brasil.prev.util.Util.FormatCPF("39764335861")));
 	}
+	/*
+	@Test
+	public void validEnv() 
+	{	
+		Assert.assertNotNull(System.getenv("DATABASE_URL"));
+	}*/
+	
+	
 
 }

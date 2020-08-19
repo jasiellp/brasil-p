@@ -1,6 +1,5 @@
 package com.brasil.prev;
 
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
@@ -10,6 +9,7 @@ import java.sql.Statement;
 import org.apache.log4j.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
  
 
 /** 
@@ -19,6 +19,7 @@ export PATH=$M2:$PATH
 
 **/ 
 @SpringBootApplication
+@ComponentScan(basePackages={"com.brasil.prev"})
 public class SpringBootApplicationBrasilPrev 
 {
 	
