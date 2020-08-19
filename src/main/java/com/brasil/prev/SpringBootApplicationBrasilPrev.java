@@ -29,12 +29,17 @@ public class SpringBootApplicationBrasilPrev
 	
 	public static void main(String[] args) throws URISyntaxException 
     { 
-		URI dbUri = new URI(System.getenv("DATABASE_URL"));
+	//	URI dbUri = new URI(System.getenv("DATABASE_URL"));
  
-	    System.setProperty("spring.datasource.username",dbUri.getUserInfo().split(":")[0]);
-	    System.setProperty("spring.datasource.password",dbUri.getUserInfo().split(":")[1]);
-	    System.setProperty("spring.datasource.url","jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath() + "?sslmode=require");
-		System.setProperty("spring.datasource.driver-class-name", "org.postgresql.Driver");
+	   // System.setProperty("spring.datasource.username",dbUri.getUserInfo().split(":")[0]);
+	    //System.setProperty("spring.datasource.password",dbUri.getUserInfo().split(":")[1]);
+	    //System.setProperty("spring.datasource.url","jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath() + "?sslmode=require");
+	    
+	    
+	    System.setProperty("spring.datasource.username","iolgtiocldpyil");
+	    System.setProperty("spring.datasource.password","aa056110b61ee6d77ae81c991abf79a44c11f291a6535598ea664829bb08e73b");
+	    System.setProperty("spring.datasource.url","jdbc:postgresql://ec2-54-91-178-234.compute-1.amazonaws.com:5432/de2qglr5nc2en3?sslmode=require");
+	    System.setProperty("spring.datasource.driver-class-name", "org.postgresql.Driver");
 		
 		criarTabelas();
 		
