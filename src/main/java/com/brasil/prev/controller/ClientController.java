@@ -23,13 +23,13 @@ public class ClientController
     private ClientRepository clientRepository;
     
     @GetMapping(path="/", produces = "application/json")
-    public Clients getEmployees() 
+    public Clients getClients() 
     {
         return clientRepository.getAllClients();
     }
     
     @PostMapping(path= "/", consumes = "application/json", produces = "application/json")
-    public ResponseEntity<Object> addEmployee( @RequestBody Client client) throws Exception 
+    public ResponseEntity<Object> addClient( @RequestBody Client client) throws Exception 
     {       
        
         //add resource
