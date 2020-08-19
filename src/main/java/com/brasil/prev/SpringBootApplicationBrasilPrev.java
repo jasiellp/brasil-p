@@ -1,5 +1,7 @@
 package com.brasil.prev;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,9 +27,17 @@ public class SpringBootApplicationBrasilPrev
 	private static final ConnectionFactory CONNECTION = new ConnectionFactory();
     
 	
-	public static void main(String[] args) 
-    {
+	public static void main(String[] args) throws URISyntaxException 
+    { 
+		URI dbUri = new URI(System.getenv("DATABASE_URL"));
+ 
+	    System.setProperty("spring.datasource.username",dbUri.getUserInfo().split(":")[0]);
+	    System.setProperty("spring.datasource.password",dbUri.getUserInfo().split(":")[1]);
+	    System.setProperty("spring.datasource.url","jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath() + "?sslmode=require");
+		System.setProperty("spring.datasource.driver-class-name", "org.postgresql.Driver");
+		
 		criarTabelas();
+		
         SpringApplication.run(SpringBootApplicationBrasilPrev.class, args);
     }
     
