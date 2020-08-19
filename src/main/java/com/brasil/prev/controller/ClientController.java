@@ -23,7 +23,7 @@ public class ClientController
     private ClientRepository clientRepository;
     
     @GetMapping(path="/", produces = "application/json")
-    public Clients getEmployees() 
+    public Clients getClients() 
     {
         return clientRepository.getAllClients();
     }
